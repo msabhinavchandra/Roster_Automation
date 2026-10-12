@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: roster-automation-service
+  labels:
+    app: roster-automation
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8501
+    targetPort: 8501
+    name: http
+    protocol: TCP
+  selector:
+    app: roster-automation
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: roster-output-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

@@ -1,0 +1,72 @@
+i want to build a roster automation tool
+
+the above roster automation works like the below days
+s1->6:30am to 3:30pm
+s2->2pm to 11pm
+s3->10pm to 7am
+this roster is for production support release support, which will operate 24/7
+
+for now plz make this roster for 50 ppl
+
+i want to UI as well as the frontend
+
+i have to deploy this either into a vm or a pod in the future to show it to my team
+
+keep it simple, do it in streamlit UI for frontend and python backend
+
+i want to whole logic to be in the form of algorithmic oriented only
+
+no use of AI
+
+and for an employee the shifts has to be in the below order in a way the roster has to be
+employee health friendly
+
+this roster should contain rotational shifts for employees in the below way
+first S1->S2->S3->S2->S1 and so on like this
+
+for every 5 working days of an employee there has to be 2 offs
+and when an employee is in an off other employees should be in the shift managing the work
+
+for now create a roster for 50 ppl as of now. also after the completion also plz tell me
+wt all u have done how u have done teach me everything u done so that i will learn
+and tweak it as per my needs whenever needed according to the changing requirements
+
+secondly 
+for wednesday, thursday, friday, saturday-> no of employees on the floor should be more heavy
+and the below are the minimum requirements(this has to be configurable in the UI too)
+reagarding the minimum requirements feature(in the UI u should be able to set it in the 
+UI as well i want this to be flexible to the user, he should be able to select the 
+days range in UI such as wednesday to saturday, and also for each day, he should be able to 
+select the shift as well for example, he should be able to give S1-> min 6 ppl from wed to saturday)
+monday and tuesday in shift s1-> x no of ppl, and s2-> y no of ppl and so on stg like that
+for now default you put wed to saturday, s1->min 6 ppl s2->min 14 ppl s3->min 16 ppl stg like that 
+and on sunday we need the least no of headcount but should definetly have ppl in the shifts to cover the 
+24/7 rule plz, in UI u shoudl be able to give the min count as well plz 
+and on Monday to tuesday it has to be more than sunday and less than wednesday to saturday headcount
+keep it the above way
+impt point this should be configurable editable to the user as per his needs in the UI
+for every day and that day's respective shifts
+
+also one more thing is also plz give options for the user with multiple ways of arranging things 
+so that he will pick one
+
+and also i will later input you the list of public holidays u want to have to consiser while giving 
+you the roster, let the user input it in the UI
+
+impt features
+in the UI it has to set an output file in 
+which the roster should be updated
+
+before the roster has to be updated, the 
+user should be willing to look into the roster, and
+should be able to edit stg before that snippet will go
+and update in the original roster
+
+want to have another dashboard which will monitor no of employees who did more night shifts 
+than required, like it should have no of employees like a bar chart who exceeded the no
+of night shifts per month
+impt caveat over here is an employee should not do more than 10 days of night shifts a month
+
+also create a context file which i can give to later with the help of which i can restore the context
+in the next cli chat session as well plz
+

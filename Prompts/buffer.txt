@@ -1,0 +1,4 @@
+plz provide the best automation solution algorithm for this problem plz 
+
+in the UI show the no of ppl in each shift and each day
+

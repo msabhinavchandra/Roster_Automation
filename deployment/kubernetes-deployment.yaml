@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: roster-automation-deployment
+  labels:
+    app: roster-automation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roster-automation
+  template:
+    metadata:
+      labels:
+        app: roster-automation
+    spec:
+      containers:
+      - name: roster-app
+        image: roster-automation:1.0.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8501
+          name: http
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "2000m"
+        env:
+        - name: STREAMLIT_SERVER_PORT
+          value: "8501"
+        - name: STREAMLIT_SERVER_ADDRESS
+          value: "0.0.0.0"
+        - name: STREAMLIT_SERVER_HEADLESS
+          value: "true"
+        volumeMounts:
+        - name: roster-output-storage
+          mountPath: /app/output
+        readinessProbe:
+          httpGet:
+            path: /_stcore/health
+            port: 8501
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /_stcore/health
+            port: 8501
+          initialDelaySeconds: 15
+          periodSeconds: 20
+      volumes:
+      - name: roster-output-storage
+        persistentVolumeClaim:
+          claimName: roster-output-pvc
